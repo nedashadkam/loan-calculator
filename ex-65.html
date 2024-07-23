@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" type="text/css" href="ex-65.css">
+
+</head>
+
+<body>
+
+    <div id="container">
+
+        <h3>loan calculator</h3>
+
+        <div class="entrance">
+            <label for="amount">loan amount $</label>
+            <input id="amount" type="text">
+        </div>
+
+        <div class="entrance">
+            <label for="rate">interest rate %</label>
+            <input id="rate" type="text">
+        </div>
+
+        <div class="entrance">
+            <label for="months">Number of months</label>
+            <input id="months" type="text">
+        </div>
+
+        <button onclick="result()">Calculate the monthly payment</button>
+
+        <p id="demo"></p>
+
+    </div>
+
+
+    <script>
+
+        function result() {
+debugger
+            let amount = +document.getElementById("amount").value;
+            let rate = +document.getElementById("rate").value;
+            let months = +document.getElementById("months").value;
+
+            let interest = amount * (rate/100);
+            amount += interest;
+
+            document.getElementById("demo").innerHTML = "Your monthly payment = " + (amount / months).toFixed(2);
+
+        }
+
+    </script>
+
+</body>
+
+</html>
